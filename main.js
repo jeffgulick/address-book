@@ -5,7 +5,7 @@ window.onload = function() {
   
   }
 const getUser = () => {
-    fetch('https://randomuser.me/api/?results=5')
+    fetch('https://randomuser.me/api/?results=20')
       .then(res => res.json())
       .then(data => {
           addressUser = data.results;
@@ -24,7 +24,7 @@ const getUser = () => {
             hidden.appendChild(hiddenTxt);
 
             let hiddenTwo = document.createElement('div');
-            let hiddenTxtTwo = document.createTextNode(`City: ${user.location.city}`);
+            let hiddenTxtTwo = document.createTextNode(`City: ${user.location.city}, State: ${user.location.state}`);
             hiddenTwo.style.visibility = 'hidden';
             hiddenTwo.appendChild(hiddenTxtTwo);
 
@@ -36,7 +36,6 @@ const getUser = () => {
               hiddenTwo.style.visibility = 'visible'; 
             };
             button.appendChild(buttonText);
-
 
             li.appendChild(text);
             li.appendChild(image);
